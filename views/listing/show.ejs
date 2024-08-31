@@ -1,0 +1,148 @@
+<% layout('/layout/boilerplate')%>
+<script>
+    const mapToken='<%=process.env.MAP_TOKEN%>'
+
+</script>
+    <br>
+    <br>
+    <br>
+
+    <!-- <body style="width: 100% !important ; background-color: rgb(249, 249, 249) !important ; height: 100%;"> -->
+
+        <div class="row row-mt-3">
+            <div class="col-8 offset-2">
+                <h1>
+                    <%=listing.title%>
+                </h1>
+            </div>
+
+
+            <div class="cards card-col-6 offset-2" style="width: 30rem">
+                <img class="card-img-top show-img" style="width: 30rem" src="<%=listing.image.url%>" alt="Card image cap ">
+                <div class="card-body">
+
+                    <p class="card-text"> 
+
+                     <h4 class="btn btn-outline-dark bg-white text-black"> <%=listing.owner.username%></h4>
+                        
+                       <p><li><%=listing.description%> </p></li> 
+                         
+                            <p><li>&#8377;<%=listing.price.toLocaleString("en-IN").replace( /\B(?=(\d{3})+(?!\d))/g, "," )%></li></p>
+                            
+                           <p> <li>
+                                <%=listing.location%>
+                            </li></p>
+                         
+                          <p>  <li>
+                                <%=listing.country%>
+                            </li></p>
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+             <%  if(currUser && listing.owner.equals(currUser._id)){%>
+            
+            <div class="del-add">
+                <a href="/listings/<%=listing._id%>/edit">EDIT</a>
+
+                <form action="/listings/<%=listing._id%>?_method=DELETE" method="POST">
+                    <button>DELETE</button>
+                </form>
+
+            </div>
+        <%}%>
+
+            </form>
+        </div>
+
+            <% if(currUser){%>
+        <div class="row mt-5 mb-3 ">
+            <hr>
+            <h4>Leave a review</h4>
+            <div class="mb-3 "></div>
+            <form action="/listings/<%=listing._id%>/review" method="post" novalidate class="needs-validation">
+                <div>
+                    <label for="ratings" class="form-label">Ratings</label>
+                    <input name="review[ratings]" min="1" max="5" type="range" class="form-control">
+
+                </div>
+                <br>
+                <div>
+                    <label for="comments" class="form-label">Comments</label>
+                    <textarea name="review[comments]" class="form-control" rows="6" required class="needs-validation "></textarea>
+                        
+                    
+                    <div class="invalid-feedback">Plese add some comments</div>
+                </div>
+
+
+                <button class="btn btn-outline-dark mb-3 mt-3">SUBMIT</button>
+
+
+            </form>
+        <%}%>
+            <hr>
+            <br>
+            <div class="row row mt-3">
+                <% for (review of listing.reviews) {%>
+
+                    <div class="card listing-card col-5 ms-3 mb-3">
+                        <div class="card-body" >
+                            <h5 class="card-title"> <b>@ <%=review.author.username %></b></h5>
+                            <p class="card-text">
+                                <%=review.comments%>.
+                            </p>
+                            <p>
+                                <%=review.ratings%> stars
+                            </p>
+
+                            <%  if(currUser){%>
+
+
+                            <form method="post"
+                                action="/listings/<%=listing._id%>/review/<%=review._id%>?_method=DELETE">
+                                <button class="btn btn-outline-dark col-3 mb-3">Delete</button>
+                            </form>
+                        <%}%>
+                        </div>
+                        
+                    </div>
+            </div>
+            
+       
+            <%}%>
+
+        </div>
+  
+
+        <div class="col-6 offset-2">
+            <h3>wher you be</h3>
+        <div id="map"></div>
+    </div>
+  
+
+    <script>
+
+
+   
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGVsdGEtc3R1ZHVlbnQiLCJhIjoiY2xvMDk0MTVhMTJ3ZDJrcGR5ZDFkaHl4ciJ9.Gj2VU1wvxc7rFVt5E4KLOQ';
+    const maps = new mapboxgl.Map({
+      container: 'map', // container ID
+      style: 'mapbox://styles/mapbox/streets-v11', // style URL
+      center: [78.9629, 20.5937], // starting position [lng, lat]
+      zoom: 4 // starting zoom
+    });
+ 
+      
+      </script>
+       
+
+
+
+ 
+
+

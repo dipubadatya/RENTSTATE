@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-md  sticky-top">
+  <div class="container-fluid">
+    <a id="logo" class="navbar-brand bg" href="#">&nbsp;RENTSTATE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="main-nav">
+        <div class="navbar-nav">
+          <a class="nav-link " aria-current="page" href="/">HOME</a>
+          <a class="nav-link" id="nav-link-list" href="/listings">LISTINGS</a>
+          <a class="nav-link" href="/listings/new">CREATE LISTINGS</a>
+          <a class="nav-link " aria-disabled="true"></a>
+        </div>
+
+
+        <div class="login">
+          <% if(!currUser){%>
+            <a class="btn btn-outline-dark" href="/signup"> <i class="ri-account-circle-fill"></i>&nbsp; sign up</a>
+            <a id="sign-in" class="btn  " href="/login"><i class="ri-login-box-line"></i>&nbsp; Login</a>
+            <%}%>
+              <% if(currUser){%>
+                &nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp; &nbsp; &nbsp;<a id="log-out" class="btn btn-outline-dark " href="/logout"><i
+                    class="ri-shut-down-line"></i>Logout</a>
+                <%}%>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</nav>
+
