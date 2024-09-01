@@ -66,9 +66,6 @@ store.on('error',()=>{
 })
 
 
-app.get("/", (req, res) => {
-  res.send('welcome to our website');
-});
 
 
 app.use(session(sessionOptions))
