@@ -1,8 +1,5 @@
 <% layout('/layout/boilerplate')%>
-<script>
-    const mapToken='<%=process.env.MAP_TOKEN%>'
 
-</script>
     <br>
     <br>
     <br>
@@ -119,27 +116,10 @@
         </div>
   
 
-        <div class="col-6 offset-2">
-            <h3>wher you be</h3>
-        <div id="map"></div>
-    </div>
+     
   
 
-    <script>
-
-
-   
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZGVsdGEtc3R1ZHVlbnQiLCJhIjoiY2xvMDk0MTVhMTJ3ZDJrcGR5ZDFkaHl4ciJ9.Gj2VU1wvxc7rFVt5E4KLOQ';
-    const maps = new mapboxgl.Map({
-      container: 'map', // container ID
-      style: 'mapbox://styles/mapbox/streets-v11', // style URL
-      center: [78.9629, 20.5937], // starting position [lng, lat]
-      zoom: 4 // starting zoom
-    });
- 
-      
-      </script>
-       
+  
 
 
 
