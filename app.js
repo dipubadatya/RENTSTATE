@@ -68,7 +68,7 @@ store.on('error',()=>{
 
 app.get('/',(req,res)=>{
  res.render("./listing/index.js")
-}
+})
 
 
 app.use(session(sessionOptions))
