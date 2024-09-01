@@ -66,10 +66,6 @@ store.on('error',()=>{
   console.log('session error', err)
 })
 
-app.get('/',(req,res)=>{
- res.render("./listing/index.js")
-})
-
 
 app.use(session(sessionOptions))
 app.use(flash())
