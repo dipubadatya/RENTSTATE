@@ -68,38 +68,42 @@
       color: rgba(0, 0, 0, 0.692);
     }
 
-  
 
-    #card-icons{
+
+    #card-icons {
       width: 100%;
       height: 100px;
     }
 
-    #card-icn-top{
+    #card-icn-top {
       width: 100%;
       height: 50%;
       display: flex;
     }
 
-    #card-icn-btm{
+    #card-icn-btm {
       width: 100%;
       height: 50%;
-      background:rgba(240, 115, 65, 0.57);
+      background: rgba(240, 115, 65, 0.57);
       display: flex;
       align-items: center;
       gap: 0.5vw;
       padding-left: 2.2vw;
     }
-     #card-icn-btm i{
-      font-size: 1vw;
-    } 
 
-     #card-icn-btm div h6{
+    #card-icn-btm  {
+      gap: 15px;
+    }
+    #owner-icon i{
+       width: 0.5vw;
+    }
+
+    #card-icn-btm div h6 {
       font-size: 0.7vw;
-  
-    } 
 
-    #crd-icons{
+    }
+
+    #crd-icons {
       width: 50%;
       height: 100%;
       display: flex;
@@ -107,39 +111,40 @@
       justify-content: space-evenly;
 
     }
-    #crd-icons i{
+
+    #crd-icons i {
       color: orangered;
       font-size: 1.1vw;
-      
-    } 
 
-#crd-reting{
-  width: 50%;
+    }
+
+    #crd-reting {
+      width: 50%;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
-}
+    }
 
 
-@media (max-width: 425px) {
-  #mid-page1 {
-    width: 100vw;
-    height: 40vh;
-    background-color: red;
-  
-  }
-  
-  #mid-page1 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    object-fit: cover;
-  
-  }
-  
-  
+    @media (max-width: 425px) {
+      #mid-page1 {
+        width: 100vw;
+        height: 40vh;
+        background-color: red;
+
+      }
+
+      #mid-page1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        object-fit: cover;
+
+      }
+
+
       #card-nav {
         background-color: #ffffff;
         height: 2rem;
@@ -150,110 +155,130 @@
         justify-content: flex-start;
         box-shadow: none;
         border-radius: 10px;
-  
-  
+
+
       }
 
       #card-nav h4 {
-      font-size: 1.5rem;
-      font-weight: 750;
+        font-size: 1.5rem;
+        font-weight: 750;
+
+      }
+
+      #card1 {
+        background-color: #efefef;
+        /* margin: 30px 70px; */
+        box-shadow: none;
+        border-radius: 10px;
+        /* padding: 15px; */
+       width: 100%;
+
+
+
+      }
+
+
+      #card-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90%;
+        margin-left: 20px;
+
+      }
+
+      .card-title {
+        font-size: 2.8vw;
+        font-weight: bold;
+
+      }
+
+      .card-text {
+        font-size: 1.8vw;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.692);
+      }
+
+      #card-body {
+        width: 600px !important;
+        height: 500px;
+        /* background-color: red; */
+      }
+      #crd-icons i{
+       font-size: 2.5vw;
 
     }
-
-    #card {
-      background-color: #efefef;
-      margin: 30px 70px;
-      box-shadow: none;
-      border-radius: 10px;
-      padding: 15px;
-      
-
-
+    #owner{
+     font-size: 10px;
+     font-weight: 400;
+    }
+    #owner-icon i{
+         font-size: 2vw;
     }
 
-
-#card-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-
-}
-
-.card-title {
-  font-size: 3.3vw;
-  font-weight: bold;
-
-}
-
-.card-text {
-  font-size:1.8vw;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.692);
-}
-#card-body{
-  width: 600px !important;
-  height: 500px;
-  /* background-color: red; */
-}
-  
-}
+   
+    #card-icn-btm  {
+      gap: 15px;
+    }
+    }
   </style>
 
   <!-- <form action="/listings/new" method="get"><button>CREATE NEW</button></form> -->
 
 
-   
-   <div id="wraper" style="overflow-x: hidden;">
+
+  <div id="wraper" style="overflow-x: hidden;">
     <div id="mid-page1">
       <img
         src="https://images.unsplash.com/photo-1717060772956-7f7253648d20?q=80&w=2030&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="">
     </div>
 
-     <div id="card-nav" class="mt-5">
+    <div id="card-nav" class="mt-5">
       WELCOME
-   <!-- <form action="/listings/limit" method="get">
-f            <input id="input" name="limit" type="text">
-  <button>submit</button>
-    </form>
- <a href="/listings">refresh</a> -->
-    </div> 
 
-    <div id="card">
-      <div class="row row-cols-lg-3 mt-3  row-cols-sm-1 "   >
+    </div>
+
+    <div id="card1">
+      <div class="row row-cols-lg-3 mt-3">
         <% for (listings of allListings){%>
-       
-        
+
+
 
           <a href=" /listings/<%=listings._id%>" id="card-box">
-            <div class="card licard " id="card-body"  style="width: 33rem; " >
+            <div class="card licard " id="card-body" style="width: 33rem; ">
               <img src="<%=listings.image.url%>" class="card-img-top" alt="" style="height: 20rem; object-fit: cover;">
               <div class="card-body">
                 <h5 class="card-title">
                   <%=listings.title%>
                 </h5>
                 <p class="card-text">
-                  &#8377;<%=listings.price.toLocaleString("en-IN").replace( /\B(?=(\d{3})+(?!\d))/g, "," ) %></p>
-                  <!-- /night -->
-                   <div id="card-icons">
-                    <div id="card-icn-top">
-                      <div id="crd-icons">
-                        <i class="ri-wifi-line"></i> <i class="ri-restaurant-line"></i><i class="ri-hotel-bed-line"></i>
+                  &#8377;<%=listings.price.toLocaleString("en-IN").replace( /\B(?=(\d{3})+(?!\d))/g, "," ) %>/ night</p>
+                <!-- /night -->
+                <div id="card-icons">
+                  <div id="card-icn-top">
+                    <div id="crd-icons">
+                      <i class="ri-wifi-line"></i> <i class="ri-restaurant-line"></i><i class="ri-hotel-bed-line"></i>
 
-                      </div>
-                      <%for(review of listings.reviews){%>
-                      <div id="crd-reting">
-                       rating <%=review.ratings%>
-                      </div>
-                    <%}%>
                     </div>
-                    <div id="card-icn-btm">
-                      <div><i class="ri-home-smile-line"></i></div> 
                    
-                    <div>author <%=listings.owner.username%> </div>
-                    </div>
-                   </div>
+                    <%for(review of listings.reviews){%>   
+                    
+
+
+                      <div id="crd-reting">
+                        rating <%=review.ratings %>
+                      </div>
+                  <%}%>
+                  </div>
+                  <div id="card-icn-btm">
+                    <div id="owner-icon"><i class="fa-solid fa-user"></i></div>
+
+                     <div id="owner"><%=listings.owner.username%></div>
+                    
+                  </div>
+                </div>
 
               </div>
             </div>
@@ -265,6 +290,5 @@ f            <input id="input" name="limit" type="text">
     </div>
   </div>
   </div>
-  
+
   </div>
-  

@@ -1,24 +1,64 @@
 <% layout('/layout/boilerplate')%>
 
+<style>
+#body-div{
+    width: 100%;
+    background-color: #ffffff;
+}
+.cards{
+    padding: 4vh 15vw;
+    background-color: rgb(255, 255, 255);
+    
+}
+.card-img-top{
+    width: 50vw;
+    height: 50vh;
+}
+
+@media (max-width: 425px){
+    #body-div{
+    width: 100%;
+    background-color: #ffffff;
+
+}
+
+.cards{
+   width: 100vw;
+    background-color: rgb(0, 0, 0);
+    
+}
+.card-img-top{
+    object-fit: cover;
+    width: 100vw;
+}
+
+
+}
+
+</style>
+
+
+
     <br>
     <br>
     <br>
 
-    <!-- <body style="width: 100% !important ; background-color: rgb(249, 249, 249) !important ; height: 100%;"> -->
+    <!-- <body style="width: 100% !important ; background-color: rgb(14, 33, 173) !important ; height: 100%;overflow-x: hidden;"> -->
 
-        <div class="row row-mt-3">
-            <div class="col-8 offset-2">
-                <h1>
-                    <%=listing.title%>
-                </h1>
-            </div>
+        <div class="row row-mt-3"  id="body-div">
+           
 
 
-            <div class="cards card-col-6 offset-2" style="width: 30rem">
-                <img class="card-img-top show-img" style="width: 30rem" src="<%=listing.image.url%>" alt="Card image cap ">
+            <div class="cards cards-col-6 ">
+                
+                    <h1>
+                        <%=listing.title%>
+                    </h1>
+                
+                <img class="card-img-top "  src="<%=listing.image.url%>" alt="Card image cap" >
                 <div class="card-body">
 
-                    <p class="card-text"> 
+                    <p class="card-text" > 
 
                      <h4 class="btn btn-outline-dark bg-white text-black"> <%=listing.owner.username%></h4>
                         
@@ -62,11 +102,26 @@
             <h4>Leave a review</h4>
             <div class="mb-3 "></div>
             <form action="/listings/<%=listing._id%>/review" method="post" novalidate class="needs-validation">
-                <div>
+                <!-- <div>
                     <label for="ratings" class="form-label">Ratings</label>
                     <input name="review[ratings]" min="1" max="5" type="range" class="form-control">
 
-                </div>
+                </div> -->
+                <fieldset class="starability-slot">
+                  
+                    <input type="radio" id="no-rate" class="input-no-rate" name="review[ratings]" value="1" checked aria-label="No rating." />
+                    <input type="radio" id="first-rate1" name="review[ratings]" value="1" />
+                    <label for="first-rate1" title="Terrible">1 star</label>
+                    <input type="radio" id="first-rate2" name="review[ratings]" value="2" />
+                    <label for="first-rate2" title="Not good">2 stars</label>
+                    <input type="radio" id="first-rate3" name="review[ratings]" value="3" />
+                    <label for="first-rate3" title="Average">3 stars</label>
+                    <input type="radio" id="first-rate4" name="review[ratings]" value="4" />
+                    <label for="first-rate4" title="Very good">4 stars</label>
+                    <input type="radio" id="first-rate5" name="review[ratings]" value="5" />
+                    <label for="first-rate5" title="Amazing">5 stars</label>
+                </fieldset>
+
                 <br>
                 <div>
                     <label for="comments" class="form-label">Comments</label>
@@ -93,9 +148,13 @@
                             <p class="card-text">
                                 <%=review.comments%>.
                             </p>
-                            <p>
-                                <%=review.ratings%> stars
-                            </p>
+                            
+                         
+                                <p class="starability-result"  data-rating="<%=review.ratings%>">
+                                 
+                                </p>
+                              
+                            
 
                             <%  if(currUser){%>
 

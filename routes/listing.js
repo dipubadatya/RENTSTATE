@@ -33,6 +33,7 @@ const validateListing = (req, res, next) => {
 
 router.get("/",
   wrapAsync(async (req, res) => {       
+   
      let allListings = await Listing.find({}) 
   .populate('owner').populate('reviews')
     res.render("./listing/index.ejs", { allListings});

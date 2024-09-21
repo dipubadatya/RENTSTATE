@@ -8,7 +8,7 @@ font-family: Poppins, sans-serif;
 
 html,body{
   height: 100%;
-  /* width: 100%; */
+  width: 100%;
    display: flex;
   flex-direction: column;   
   font-family: Arial, sans-serif;
@@ -125,7 +125,7 @@ html,body{
   font-size: 1.3rem;
 }
 
-.listing-card {
+ .listing-card {
 border-color: #000000;
 }
 .licard{
@@ -136,7 +136,7 @@ border-radius: 1rem !important;
   margin-bottom: 2rem !important;
   margin-top: 2rem !important;
   
-}
+} 
 .card-img-top{
 width: 100%;
 height: 100%;
@@ -148,9 +148,7 @@ border-radius: 1rem !important;
 
 
 /*show page */
-.show-img{
-      height: 30vh;
-}
+
 
 .del-add{
   margin-left: 13rem;
@@ -207,8 +205,8 @@ border-radius: 1rem !important;
 
 
 
- @media (max-width: 1385px) {
-  .container {
+ /* @media (max-width: 1385px) { */
+  /* .container {
       margin: 20px;
       padding: 15px;
   }
@@ -221,13 +219,10 @@ border-radius: 1rem !important;
   .card .location {
       font-size: 1em;
   }
-}
+} */
 
-@media (max-width: 480px) {
-  .show-img{
-    height: 35vh;
-    padding-right: 40% ;
-}
+/* @media (max-width: 480px) {
+
 
 .del-add{
 margin-left: 5rem;
@@ -268,7 +263,7 @@ border-radius: 30px;
 
 
 
-}
+} */
 
 
 
